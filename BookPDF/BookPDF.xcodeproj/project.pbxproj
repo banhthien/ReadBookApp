@@ -106,8 +106,11 @@
 		5779E2C01AF870F20066F51C /* BookPDF */ = {
 			isa = PBXGroup;
 			children = (
+				578322FF1B00577F00E7F410 /* Model */,
 				578322FC1B00562600E7F410 /* BookTableViewController.h */,
 				578322FD1B00562600E7F410 /* BookTableViewController.m */,
+				5779E2FF1AF89A130066F51C /* DownloadListTableViewController.h */,
+				5779E3001AF89A130066F51C /* DownloadListTableViewController.m */,
 				578322F91B00560800E7F410 /* BookController.h */,
 				578322FA1B00560800E7F410 /* BookController.m */,
 				5779E2C51AF870F20066F51C /* AppDelegate.h */,
@@ -118,11 +121,7 @@
 				5779E2D11AF870F20066F51C /* Images.xcassets */,
 				5779E2D31AF870F20066F51C /* LaunchScreen.xib */,
 				5779E2C81AF870F20066F51C /* BookPDF.xcdatamodeld */,
-				5779E3021AF8A9050066F51C /* Book.h */,
-				5779E3031AF8A9050066F51C /* Book.m */,
 				5779E2C11AF870F20066F51C /* Supporting Files */,
-				5779E2FF1AF89A130066F51C /* DownloadListTableViewController.h */,
-				5779E3001AF89A130066F51C /* DownloadListTableViewController.m */,
 			);
 			path = BookPDF;
 			sourceTree = "<group>";
@@ -153,6 +152,31 @@
 				5779E2DF1AF870F20066F51C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		578322FF1B00577F00E7F410 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				578323011B005D0D00E7F410 /* BookOnlineModel */,
+				578323001B00578900E7F410 /* BookOfflineModel */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		578323001B00578900E7F410 /* BookOfflineModel */ = {
+			isa = PBXGroup;
+			children = (
+				5779E3021AF8A9050066F51C /* Book.h */,
+				5779E3031AF8A9050066F51C /* Book.m */,
+			);
+			name = BookOfflineModel;
+			sourceTree = "<group>";
+		};
+		578323011B005D0D00E7F410 /* BookOnlineModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BookOnlineModel;
 			sourceTree = "<group>";
 		};
 		68E5EAAABB1675A46F95F151 /* Frameworks */ = {

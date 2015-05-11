@@ -7,26 +7,76 @@
 //
 
 #import "DownloadListTableViewController.h"
+#import "AFNetWorking.h"
+#import "Book.h"
 
 @interface DownloadListTableViewController ()
 
 @end
 
 @implementation DownloadListTableViewController
-
+@synthesize data;
+@synthesize listBook;
+@synthesize managedObjectContext = _managedObjectContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    AppDelegate *apdelegate = [[UIApplication sharedApplication] delegate];
+    _managedObjectContext = [apdelegate managedObjectContext];
+
+    [self refreshData];
+ 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+#pragma DataFuntion
+-(void) refreshData{
+    NSString *string = [NSString stringWithFormat:@"http://www.json-generator.com/api/json/get/chMstzWNpe?indent=2"];
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        listBook = [NSMutableArray array];
+        
+        NSArray* dataPost = [responseObject valueForKeyPath:@"data"];
+        
+        for (NSDictionary *dict in dataPost)
+        {
+            
+            //NSString *image =[dict objectForKey:@"image"];
+            //NSString *localfile= [dict objectForKey:@"url"];
+            Book *book= [[Book alloc] init];//[NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:_managedObjectContext];
+            book.image= [dict objectForKey:@"image"];
+            book.localfile= [dict objectForKey:@"url"];
+            book.title=[dict objectForKey:@"title"];
+            book.type=[dict objectForKey:@"type"];
+            //book.favorite=FALSE;
+            book.currentpage=0;
+            [self.listBook addObject:book];
+//            if (![self.listBook containsObject:book]) {
+//            }
+            NSLog(@"self.list:%@", self.listBook);
+        }
+    
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+    [operation start];
+    
 }
 
 #pragma mark - Table view data source
@@ -38,18 +88,31 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return listBook.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DownloadCell" forIndexPath:indexPath];
+    
+    
+    Book *book = [listBook objectAtIndex:indexPath.row];
+    // show text
+    NSURL *url = [NSURL URLWithString:book.image];
+    NSData *urlimage = [NSData dataWithContentsOfURL:url];
+    UIImage * image = [UIImage imageWithData:urlimage];
+    
+    cell.imageView.image=image;
+    cell.textLabel.text= book.title;
+    
+    //cell.nameLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+    //cell.postLabel.text = post.post;
+    //cell.nameLabel.text = post.name;
+
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
