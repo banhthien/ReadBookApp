@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>91B7DE74-DF1B-4FFA-93FF-916D93442836</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BookPDF</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EAD18133EF3D7F6B6A8678C3CA26115B50E814AD</key>
+		<string>https://github.com/banhthien/ReadBookApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BookPDF/BookPDF.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EAD18133EF3D7F6B6A8678C3CA26115B50E814AD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/banhthien/ReadBookApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EAD18133EF3D7F6B6A8678C3CA26115B50E814AD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EAD18133EF3D7F6B6A8678C3CA26115B50E814AD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ReadBookApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

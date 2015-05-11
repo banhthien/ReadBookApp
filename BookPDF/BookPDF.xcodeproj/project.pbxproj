@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FCB6F7F69E10932B7FDADCD /* libPods-BookPDF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 678483867ABB0664F51EC639 /* libPods-BookPDF.a */; };
 		5779E2C41AF870F20066F51C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779E2C31AF870F20066F51C /* main.m */; };
 		5779E2C71AF870F20066F51C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779E2C61AF870F20066F51C /* AppDelegate.m */; };
 		5779E2CA1AF870F20066F51C /* BookPDF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5779E2C81AF870F20066F51C /* BookPDF.xcdatamodeld */; };
@@ -58,6 +59,9 @@
 		578322FA1B00560800E7F410 /* BookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookController.m; sourceTree = "<group>"; };
 		578322FC1B00562600E7F410 /* BookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTableViewController.h; sourceTree = "<group>"; };
 		578322FD1B00562600E7F410 /* BookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewController.m; sourceTree = "<group>"; };
+		678483867ABB0664F51EC639 /* libPods-BookPDF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookPDF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40A600A3808F59C27B5D33E /* Pods-BookPDF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPDF.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookPDF/Pods-BookPDF.release.xcconfig"; sourceTree = "<group>"; };
+		EFB2CB16488E315CC2C6DB9F /* Pods-BookPDF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookPDF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookPDF/Pods-BookPDF.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCB6F7F69E10932B7FDADCD /* libPods-BookPDF.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,8 @@
 				5779E2C01AF870F20066F51C /* BookPDF */,
 				5779E2DD1AF870F20066F51C /* BookPDFTests */,
 				5779E2BF1AF870F20066F51C /* Products */,
+				8563AAF1E7AB1E4AAFDE1639 /* Pods */,
+				68E5EAAABB1675A46F95F151 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +155,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		68E5EAAABB1675A46F95F151 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				678483867ABB0664F51EC639 /* libPods-BookPDF.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8563AAF1E7AB1E4AAFDE1639 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFB2CB16488E315CC2C6DB9F /* Pods-BookPDF.debug.xcconfig */,
+				C40A600A3808F59C27B5D33E /* Pods-BookPDF.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5779E2E41AF870F20066F51C /* Build configuration list for PBXNativeTarget "BookPDF" */;
 			buildPhases = (
+				1F6475EDD5710F21F6790860 /* Check Pods Manifest.lock */,
 				5779E2BA1AF870F20066F51C /* Sources */,
 				5779E2BB1AF870F20066F51C /* Frameworks */,
 				5779E2BC1AF870F20066F51C /* Resources */,
+				4F22616953036B7A8634909D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,6 +270,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F6475EDD5710F21F6790860 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4F22616953036B7A8634909D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookPDF/Pods-BookPDF-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5779E2BA1AF870F20066F51C /* Sources */ = {
@@ -377,6 +436,7 @@
 		};
 		5779E2E51AF870F20066F51C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFB2CB16488E315CC2C6DB9F /* Pods-BookPDF.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookPDF/Info.plist;
@@ -387,6 +447,7 @@
 		};
 		5779E2E61AF870F20066F51C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C40A600A3808F59C27B5D33E /* Pods-BookPDF.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookPDF/Info.plist;
