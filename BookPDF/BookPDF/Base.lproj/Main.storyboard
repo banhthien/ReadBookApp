@@ -40,7 +40,7 @@
                     <navigationItem key="navigationItem" title="List Book" id="qLb-4V-VqC">
                         <barButtonItem key="rightBarButtonItem" title="Download" id="0l6-J5-GtF">
                             <connections>
-                                <segue destination="2No-l3-0O3" kind="push" id="h9t-Mo-DiJ"/>
+                                <segue destination="2No-l3-0O3" kind="push" identifier="ViewDownload" id="h9t-Mo-DiJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="sJn-Lr-6Qf" style="IBUITableViewCellStyleDefault" id="E4Q-ta-341">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DownloadCell" textLabel="sJn-Lr-6Qf" style="IBUITableViewCellStyleDefault" id="E4Q-ta-341">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E4Q-ta-341" id="yJf-mV-NwD">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -151,7 +151,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Ayp-gw-ZrI">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="4rg-5m-LLN">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="4rg-5m-LLN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Yq-7m-Wll">
                                 <rect key="frame" x="292" y="44" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8.5" y="418.5"/>
+            <point key="canvasLocation" x="5.5" y="491.5"/>
         </scene>
     </scenes>
 </document>

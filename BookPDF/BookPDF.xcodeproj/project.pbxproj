@@ -15,12 +15,12 @@
 		5779E2D21AF870F20066F51C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5779E2D11AF870F20066F51C /* Images.xcassets */; };
 		5779E2D51AF870F20066F51C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5779E2D31AF870F20066F51C /* LaunchScreen.xib */; };
 		5779E2E11AF870F20066F51C /* BookPDFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779E2E01AF870F20066F51C /* BookPDFTests.m */; };
-		5779E2F51AF878000066F51C /* BookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779E2F41AF878000066F51C /* BookController.m */; };
 		5779E2F71AF8783C0066F51C /* AFNetWorking.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5779E2F61AF8783C0066F51C /* AFNetWorking.pdf */; };
 		5779E2F91AF878620066F51C /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = 5779E2F81AF878620066F51C /* Help.png */; };
-		5779E2FC1AF8793D0066F51C /* BookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779E2FB1AF8793D0066F51C /* BookTableViewController.m */; };
 		5779E3011AF89A130066F51C /* DownloadListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779E3001AF89A130066F51C /* DownloadListTableViewController.m */; };
 		5779E3041AF8A9050066F51C /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779E3031AF8A9050066F51C /* Book.m */; };
+		578322FB1B00560800E7F410 /* BookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578322FA1B00560800E7F410 /* BookController.m */; };
+		578322FE1B00562600E7F410 /* BookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578322FD1B00562600E7F410 /* BookTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,16 +48,16 @@
 		5779E2DA1AF870F20066F51C /* BookPDFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookPDFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5779E2DF1AF870F20066F51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5779E2E01AF870F20066F51C /* BookPDFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookPDFTests.m; sourceTree = "<group>"; };
-		5779E2F31AF878000066F51C /* BookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookController.h; path = ../BookController.h; sourceTree = "<group>"; };
-		5779E2F41AF878000066F51C /* BookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookController.m; path = ../BookController.m; sourceTree = "<group>"; };
 		5779E2F61AF8783C0066F51C /* AFNetWorking.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AFNetWorking.pdf; sourceTree = "<group>"; };
 		5779E2F81AF878620066F51C /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Help.png; sourceTree = "<group>"; };
-		5779E2FA1AF8793D0066F51C /* BookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableViewController.h; path = ../BookTableViewController.h; sourceTree = "<group>"; };
-		5779E2FB1AF8793D0066F51C /* BookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableViewController.m; path = ../BookTableViewController.m; sourceTree = "<group>"; };
 		5779E2FF1AF89A130066F51C /* DownloadListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadListTableViewController.h; sourceTree = "<group>"; };
 		5779E3001AF89A130066F51C /* DownloadListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadListTableViewController.m; sourceTree = "<group>"; };
 		5779E3021AF8A9050066F51C /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		5779E3031AF8A9050066F51C /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		578322F91B00560800E7F410 /* BookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookController.h; sourceTree = "<group>"; };
+		578322FA1B00560800E7F410 /* BookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookController.m; sourceTree = "<group>"; };
+		578322FC1B00562600E7F410 /* BookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTableViewController.h; sourceTree = "<group>"; };
+		578322FD1B00562600E7F410 /* BookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +99,10 @@
 		5779E2C01AF870F20066F51C /* BookPDF */ = {
 			isa = PBXGroup;
 			children = (
-				5779E2FA1AF8793D0066F51C /* BookTableViewController.h */,
-				5779E2FB1AF8793D0066F51C /* BookTableViewController.m */,
-				5779E2F31AF878000066F51C /* BookController.h */,
-				5779E2F41AF878000066F51C /* BookController.m */,
+				578322FC1B00562600E7F410 /* BookTableViewController.h */,
+				578322FD1B00562600E7F410 /* BookTableViewController.m */,
+				578322F91B00560800E7F410 /* BookController.h */,
+				578322FA1B00560800E7F410 /* BookController.m */,
 				5779E2C51AF870F20066F51C /* AppDelegate.h */,
 				5779E2C61AF870F20066F51C /* AppDelegate.m */,
 				5779E2CB1AF870F20066F51C /* ViewController.h */,
@@ -251,13 +251,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5779E2CA1AF870F20066F51C /* BookPDF.xcdatamodeld in Sources */,
-				5779E2FC1AF8793D0066F51C /* BookTableViewController.m in Sources */,
 				5779E2C71AF870F20066F51C /* AppDelegate.m in Sources */,
 				5779E2CD1AF870F20066F51C /* ViewController.m in Sources */,
+				578322FB1B00560800E7F410 /* BookController.m in Sources */,
 				5779E3041AF8A9050066F51C /* Book.m in Sources */,
 				5779E3011AF89A130066F51C /* DownloadListTableViewController.m in Sources */,
-				5779E2F51AF878000066F51C /* BookController.m in Sources */,
 				5779E2C41AF870F20066F51C /* main.m in Sources */,
+				578322FE1B00562600E7F410 /* BookTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +448,7 @@
 				5779E2E61AF870F20066F51C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5779E2E71AF870F20066F51C /* Build configuration list for PBXNativeTarget "BookPDFTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +457,7 @@
 				5779E2E91AF870F20066F51C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

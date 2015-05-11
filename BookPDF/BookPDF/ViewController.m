@@ -21,12 +21,24 @@
     if(book){
         AppDelegate *apdelegate = [[UIApplication sharedApplication] delegate];
         _managedObjectContext = [apdelegate managedObjectContext];
-        NSString *path = [[NSBundle mainBundle] pathForResource:book.localfile ofType:@"pdf"];
+        NSString *path;
+        NSLog(@"%@", book.localfile);
+        if([book.localfile isEqualToString:@"AFNetWorking"]){
+            path = [[NSBundle mainBundle] pathForResource:book.localfile ofType:@"pdf"];
+        }
+        else {
+            NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString  *documentsDirectory = [paths objectAtIndex:0];
+            
+            path= [NSString stringWithFormat:@"%@/%@.pdf", documentsDirectory, book.localfile];
+        }
+        
+        
         NSURL *url = [NSURL fileURLWithPath:path];
         CGPDFDocumentRef document = CGPDFDocumentCreateWithURL((CFURLRef)url);
         pageCount = CGPDFDocumentGetNumberOfPages(document);
        
-        self.maximunPage.text= [NSString stringWithFormat:@"/ %i",pageCount];
+        self.maximunPage.text= [NSString stringWithFormat:@"/ %zu",pageCount];
         NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
         [webView loadRequest:urlRequest];
         webView.scalesPageToFit = YES;
@@ -76,6 +88,19 @@
         NSLog(@"co loi , %@", [error localizedDescription]);
     }
     self.numberOfLastPageRead.text = [NSString stringWithFormat:@"Last page read %i", [book.currentpage intValue]];
+    
+    
+//    NSString *stringURL = @"https://www.adobe.com/enterprise/accessibility/pdfs/acro6_pg_ue.pdf";
+//    NSURL  *url = [NSURL URLWithString:stringURL];
+//    NSData *urlData = [NSData dataWithContentsOfURL:url];
+//    if ( urlData )
+//    {
+//        NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//        NSString  *documentsDirectory = [paths objectAtIndex:0];
+//        NSLog(@"%@",documentsDirectory);
+//        NSString  *filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,@"acro.pdf"];
+//        [urlData writeToFile:filePath atomically:YES];
+//    }
 
 }
 @end
