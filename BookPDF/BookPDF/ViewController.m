@@ -29,7 +29,7 @@
         else {
             NSArray       *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString  *documentsDirectory = [paths objectAtIndex:0];
-            
+           
             path= [NSString stringWithFormat:@"%@/%@.pdf", documentsDirectory, book.localfile];
         }
         

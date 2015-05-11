@@ -22,7 +22,7 @@
     [super viewDidLoad];
     AppDelegate *apdelegate = [[UIApplication sharedApplication] delegate];
     _managedObjectContext = [apdelegate managedObjectContext];
-
+    listBook = [NSMutableArray array];
     [self refreshData];
  
 }
@@ -42,16 +42,18 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        listBook = [NSMutableArray array];
+        
         
         NSArray* dataPost = [responseObject valueForKeyPath:@"data"];
         
         for (NSDictionary *dict in dataPost)
         {
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Book" inManagedObjectContext:self.managedObjectContext];
+            Book *book = [[Book alloc]initWithEntity:entity insertIntoManagedObjectContext:_managedObjectContext];
             
             //NSString *image =[dict objectForKey:@"image"];
             //NSString *localfile= [dict objectForKey:@"url"];
-            Book *book= [[Book alloc] init];//[NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:_managedObjectContext];
+           
             book.image= [dict objectForKey:@"image"];
             book.localfile= [dict objectForKey:@"url"];
             book.title=[dict objectForKey:@"title"];
@@ -61,7 +63,7 @@
             [self.listBook addObject:book];
 //            if (![self.listBook containsObject:book]) {
 //            }
-            NSLog(@"self.list:%@", self.listBook);
+            //NSLog(@"self.list:%lu", self.listBook.count);
         }
     
         [self.tableView reloadData];
@@ -76,19 +78,20 @@
         [alertView show];
     }];
     [operation start];
-    
+  
+
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return listBook.count;
+        return listBook.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,19 +100,14 @@
     
     
     Book *book = [listBook objectAtIndex:indexPath.row];
-    // show text
+    
     NSURL *url = [NSURL URLWithString:book.image];
     NSData *urlimage = [NSData dataWithContentsOfURL:url];
     UIImage * image = [UIImage imageWithData:urlimage];
     
     cell.imageView.image=image;
     cell.textLabel.text= book.title;
-    
-    //cell.nameLabel.font = [UIFont boldSystemFontOfSize:16.0f];
-    //cell.postLabel.text = post.post;
-    //cell.nameLabel.text = post.name;
 
-    
     return cell;
 }
 

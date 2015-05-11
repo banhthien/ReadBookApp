@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Book : NSManagedObject <NSObject>
+@interface Book : NSManagedObject
 
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * image;

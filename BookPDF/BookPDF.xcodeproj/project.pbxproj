@@ -157,26 +157,18 @@
 		578322FF1B00577F00E7F410 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				578323011B005D0D00E7F410 /* BookOnlineModel */,
-				578323001B00578900E7F410 /* BookOfflineModel */,
+				578323001B00578900E7F410 /* BookModel */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		578323001B00578900E7F410 /* BookOfflineModel */ = {
+		578323001B00578900E7F410 /* BookModel */ = {
 			isa = PBXGroup;
 			children = (
 				5779E3021AF8A9050066F51C /* Book.h */,
 				5779E3031AF8A9050066F51C /* Book.m */,
 			);
-			name = BookOfflineModel;
-			sourceTree = "<group>";
-		};
-		578323011B005D0D00E7F410 /* BookOnlineModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = BookOnlineModel;
+			name = BookModel;
 			sourceTree = "<group>";
 		};
 		68E5EAAABB1675A46F95F151 /* Frameworks */ = {
